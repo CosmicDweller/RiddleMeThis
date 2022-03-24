@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %}Admin{% endblock %} {% block content
+%}
+<div class="d-flex flex-column align-items-center">
+  <div class="bg-light p-4 mt-5" style="width: 70%; border-radius: 1rem">
+    <h3>Admin</h3>
+    <form class="d-flex flex-column align-content-center" method="post">
+      <input
+        type="text"
+        name="question"
+        id="question"
+        placeholder="question"
+        class="form-control"
+      />
+      <br />
+      <input
+        type="text"
+        name="answer"
+        id="answer"
+        placeholder="answer"
+        class="form-control"
+      />
+      <br />
+      <input
+        type="number"
+        name="difficulty"
+        id="difficulty"
+        min="1"
+        max="5"
+        step="1"
+        placeholder="question difficulty"
+        class="form-control"
+      />
+      <div class="mt-5">
+        <button type="submit" class="btn mint-green-background">
+          Add Item
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="bg-light p-4 mt-5 mb-5" style="width: 70%; border-radius: 1rem">
+    <!-- <div class="container" style="margin-top: 6rem">
+      <form method="post">
+        <div class="input-group">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            class="form-control"
+            placeholder="product name"
+          />
+          <div>
+            <button type="submit" class="btn mint-green-background">
+              <i class="bi bi-search"></i> search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div> -->
+    <h4 class="mt-5 mb-4">Puzzles:</h4>
+    <div>
+      <div class="d-flex justify-content-center" id="puzzles">
+        <ul class="list-group list-group-flush">
+          {% for puzzle in puzzles %}
+          <li class="list-group-item">
+            {{ puzzle.question}} | {{puzzle.answer}} | {{puzzle.difficulty}}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
