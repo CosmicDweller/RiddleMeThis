@@ -1,1 +1,1 @@
-web: gunicorn main.py:RiddleMeThis
+web: gunicorn main:website
